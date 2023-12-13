@@ -7,7 +7,7 @@
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/out/build/${presetName}",
       "installDir": "${sourceDir}/out/install/${presetName}",
-      "toolchainFile": "C:/dev/C++/SVGscape/SVGscape/vendor/emsdk/ext/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",
+      "toolchainFile": "${sourceDir}/WebgpuLib/vendor/emsdk/ext/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",
       "architecture": {
         "value": "x64",
         "strategy": "external"
@@ -23,7 +23,7 @@
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/out/build/${presetName}",
       "installDir": "${sourceDir}/out/install/${presetName}",
-      "toolchainFile": "C:/dev/C++/SVGscape/SVGscape/vendor/emsdk/ext/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",
+      "toolchainFile": "${sourceDir}/WebgpuLib/vendor/emsdk/ext/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",
       "architecture": {
         "value": "x64",
         "strategy": "external"

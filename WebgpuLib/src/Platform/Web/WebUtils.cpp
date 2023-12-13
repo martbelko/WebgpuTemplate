@@ -6,7 +6,7 @@
 
 #include <emscripten/emscripten.h>
 
-namespace SVGscape {
+namespace Base {
 
 	void Utils::Sleep(uint32_t miliseconds)
 	{

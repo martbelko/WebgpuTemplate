@@ -20,7 +20,7 @@ namespace Base {
 		void Run();
 		void OnFrame(Timestep ts);
 	private:
-#if defined(SS_PLATFORM_WEB)
+#if defined(PLATFORM_WEB)
 		static int EMSRedraw(double time, void* userData);
 #endif
 	private:

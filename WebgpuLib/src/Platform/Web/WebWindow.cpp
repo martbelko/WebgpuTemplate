@@ -15,7 +15,7 @@
 #include <iostream>
 #include <cassert>
 
-namespace SVGscape {
+namespace Base {
 
 	EM_JS(void, EMSSetWindowTitle, (const char* title),
 	{
@@ -89,7 +89,7 @@ namespace SVGscape {
 		// Handle events
 		m_Events.reserve(8); // Hold 8 events without resizing the vector, for now
 
-#if defined(SS_PLATFORM_WEB)
+#if defined(PLATFORM_WEB)
 		EMSSetWindowHandle(m_WindowHandle);
 		EMSSetWindowTitle(props.title.c_str());
 		EMSSetResizeCallback();
@@ -130,9 +130,9 @@ namespace SVGscape {
 	void Window::OnWindowResized(GLFWwindow* windowHandle, int width, int height)
 	{
 		Window* window = static_cast<Window*>(glfwGetWindowUserPointer(windowHandle));
-		window->m_Width = static_cast<u32>(width);
-		window->m_Height = static_cast<u32>(height);
-		window->m_Events.push_back(Event(WindowResizedEvent{ .width = static_cast<u32>(width), .height = static_cast<u32>(height) }));
+		window->m_Width = static_cast<uint32_t>(width);
+		window->m_Height = static_cast<uint32_t>(height);
+		window->m_Events.push_back(Event(WindowResizedEvent{ .width = static_cast<uint32_t>(width), .height = static_cast<uint32_t>(height) }));
 	}
 
 	void Window::OnKeyPressed(GLFWwindow* windowHandle, int key, int scancode, int action, int mods)

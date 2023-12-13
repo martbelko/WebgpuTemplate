@@ -13,7 +13,7 @@
 #include <iostream>
 #include <cassert>
 
-namespace SVGscape {
+namespace Base {
 
 	void GraphicsContext::Init(GLFWwindow* window, uint32_t width, uint32_t height)
 	{

@@ -3,7 +3,7 @@
 #include <cstdint>
 #include <memory>
 
-#if defined(SS_PLATFORM_WEB)
+#if defined(PLATFORM_WEB)
 	#define KEEP_IN_MODULE extern "C" __attribute__((used, visibility("default")))
 #endif
 

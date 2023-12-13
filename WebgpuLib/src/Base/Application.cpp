@@ -9,7 +9,7 @@
 
 #include <webgpu/webgpu_cpp.h>
 
-#if defined(SS_PLATFORM_WEB)
+#if defined(PLATFORM_WEB)
 	#include <emscripten.h>
 	#include <emscripten/html5.h>
 	#include <emscripten/html5_webgpu.h>
@@ -74,7 +74,7 @@ namespace Base {
 		m_Window->Update();
 	}
 
-#if defined(SS_PLATFORM_WEB)
+#if defined(PLATFORM_WEB)
 	EM_BOOL Application::EMSRedraw(double time, void* userData)
 	{
 		if (userData == nullptr)

@@ -4,7 +4,7 @@
 
 #include "Base/Filesystem.h"
 
-namespace SVGscape {
+namespace Base {
 
 	void Filesystem::Init()
 	{
