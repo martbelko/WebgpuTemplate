@@ -1,0 +1,17 @@
+[submodule "WebgpuLib/vendor/dawn/ext/dawn"]
+	path = WebgpuLib/vendor/dawn/ext/dawn
+	url = https://github.com/google/dawn
+	ignore = dirty
+[submodule "vendor/imgui/ext/imgui"]
+	path = vendor/imgui/ext/imgui
+	url = https://github.com/ocornut/imgui
+	branch = docking
+[submodule "vendor/glm/ext/glm"]
+	path = vendor/glm/ext/glm
+	url = https://github.com/g-truc/glm
+[submodule "WebgpuLib/vendor/emsdk/ext"]
+	path = WebgpuLib/vendor/emsdk/ext
+	url = https://github.com/emscripten-core/emsdk
+[submodule "WebgpuLib/vendor/glfw/ext/glfw"]
+	path = WebgpuLib/vendor/glfw/ext/glfw
+	url = https://github.com/glfw/glfw
