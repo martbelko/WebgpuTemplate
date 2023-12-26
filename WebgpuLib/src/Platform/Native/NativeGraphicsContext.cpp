@@ -47,8 +47,24 @@ namespace Base {
 		s_Adapter = RequestAdapter(s_Instance, &opts);
 
 		wgpu::DeviceDescriptor deviceDesc;
-		deviceDesc.label = "SVGscape_Device";
-		deviceDesc.defaultQueue.label = "SVGscape_Queue";
+		deviceDesc.label = "Default Device";
+		deviceDesc.defaultQueue.label = "Default Queue";
+
+#ifdef _DEBUG
+		/*
+		 *	Device extensions toggles
+		 *	dump_shaders: Log input WGSL shaders and translated backend shaders (MSL/ HLSL/DXBC/DXIL / SPIR-V).
+		 *	disable_symbol_renaming: As much as possible, disable renaming of symbols (variables, function names...)
+		 *  emit_hlsl_debug_symbols: Sets the D3DCOMPILE_SKIP_OPTIMIZATION and D3DCOMPILE_DEBUG compilation flags when compiling HLSL code
+		 *	use_user_defined_labels_in_backend: Forward object labels to the backend so that they can be seen in native debugging tools like RenderDoc, PIX...
+		 */
+		const char* const enabledToggles[] = { "dump_shaders", "disable_symbol_renaming", "use_user_defined_labels_in_backend" };
+		wgpu::DawnTogglesDescriptor deviceTogglesDesc;
+		deviceTogglesDesc.enabledToggles = enabledToggles;
+		deviceTogglesDesc.enabledToggleCount = sizeof(enabledToggles) / sizeof(char*);
+
+		deviceDesc.nextInChain = &deviceTogglesDesc;
+#endif
 
 		s_Device = RequestDevice(s_Adapter, &deviceDesc);
 
