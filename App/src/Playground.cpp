@@ -22,7 +22,7 @@ public:
 	{
 	}
 private:
-	float m_LastFrameTime;
+	float m_LastFrameTime = 0.0f;
 };
 
 extern Base::Application* CreateApplication()
