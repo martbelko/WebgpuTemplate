@@ -65,8 +65,10 @@ namespace Base {
 
 		deviceDesc.nextInChain = &deviceTogglesDesc;
 #endif
-
 		s_Device = RequestDevice(s_Adapter, &deviceDesc);
+		wgpu::SupportedLimits supportedLimits;
+		s_Device.GetLimits(&supportedLimits);
+		s_Limits = supportedLimits.limits;
 
 		s_Device.SetUncapturedErrorCallback([](WGPUErrorType type, char const* message, void* pUserData)
 		{

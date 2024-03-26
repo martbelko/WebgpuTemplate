@@ -36,11 +36,6 @@ namespace Base {
 		}
 
 		ASSERT(userData.requestEnded, "Request has not yet ended");
-
-		wgpu::Adapter adapter = userData.adapter;
-		wgpu::SupportedLimits limits;
-		adapter.GetLimits(&limits);
-		s_Limits = limits.limits;
 		return userData.adapter;
 	}
 
